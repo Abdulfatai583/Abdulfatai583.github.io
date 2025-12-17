@@ -70,7 +70,62 @@ This project demonstrates how lifestyle behaviors and underlying health conditio
 The findings emphasize the value of data-driven awareness, healthy living, and routine health screenings in reducing the growing burden of cardiovascular disease.*
 
 ### Project Title Two
-*A brief description of your project, the tools used, and the key insights derived.*
+# Call Center Performance Dashboard (Power BI)
+
+## Project Overview
+This project analyzes call center operational data to evaluate agent performance, call handling efficiency, and overall service quality. The objective is to identify performance gaps, workload patterns, and customer service trends that can help management improve operational efficiency and customer satisfaction.
+
+Power BI Desktop was used for data cleaning, modeling, and interactive dashboard development to transform raw call center data into actionable insights.
+
+## Dataset Summary
+The dataset contains detailed records of call center activities, including:
+- Call volume and call duration  
+- Agent performance metrics  
+- Call resolution status  
+- Customer satisfaction indicators  
+- Time-based attributes (date, time, shifts)
+
+The data represents day-to-day call center operations and was structured to support performance monitoring and decision-making.
+
+## Data Preparation
+The following data preparation steps were performed using Power Query:
+- Cleaning and formatting raw call records  
+- Handling missing and inconsistent values  
+- Creating calculated fields for performance metrics  
+- Structuring the data model for efficient analysis in Power BI  
+
+DAX measures were used to compute KPIs such as call volume trends, resolution rates, and agent performance indicators.
+
+## Key Insights & Analysis
+### Operational Insights
+- Call volumes varied significantly by time and shift, indicating peak operational periods.
+- Certain agents handled a higher share of calls, highlighting workload imbalance.
+- Average call duration provided insight into call complexity and agent efficiency.
+
+### Agent Performance Insights
+- High-performing agents consistently resolved calls faster while maintaining service quality.
+- Performance differences across agents highlighted opportunities for targeted training and support.
+
+### Service Quality Insights
+- Call resolution efficiency showed a direct relationship with customer satisfaction.
+- Periods of high call volume correlated with longer handling times, impacting service quality.
+
+## Recommendations
+Based on the analysis, the following recommendations are suggested:
+1. Optimize staff scheduling during peak call periods to reduce workload pressure.
+2. Provide targeted training for agents with lower resolution efficiency.
+3. Monitor key KPIs regularly using dashboards to track performance trends.
+4. Implement workload balancing strategies to improve agent productivity and service quality.
+
+## Tools & Technologies
+- **Power BI Desktop** – Data modeling, DAX calculations, and dashboard creation  
+- **Power Query** – Data cleaning and transformation  
+- **Excel / CSV** – Source data inspection
+- 
+## Conclusion
+This Call Center Performance Dashboard demonstrates how operational data can be transformed into meaningful insights using Power BI. By visualizing call trends, agent performance, and service quality metrics, the dashboard provides a data-driven foundation for improving customer support operations and decision-making.
+
+The project highlights the value of analytics in enhancing efficiency, accountability, and overall service performance in call center environments.
 
 ### Project Title Three
 *A brief description of your project, the tools used, and the key insights derived.*
