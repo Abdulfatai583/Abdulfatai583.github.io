@@ -128,108 +128,25 @@
     </div>
 </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>International FMCG SQL Queries - Sample</title>
-  <style>
-    body {
-      font-family: "Courier New", Courier, monospace;
-      background-color: #1e1e1e;
-      color: #d4d4d4;
-      margin: 2rem;
-    }
+<!-- Project 3 -->
+<div class="project-card">
+    <img src="international-fmcg.png" alt="International FMCG SQL Analysis">
+    <div class="project-card-content">
+        <h3>International FMCG Sales Analysis (SQL)</h3>
+        <p>
+            This project analyzes international FMCG sales data using SQL to evaluate
+            profit trends, regional performance, and cost efficiency across multiple countries.
+        </p>
+        <div class="project-buttons">
+            <a href="international-fmcg.html"
+               target="_blank"
+               class="btn btn-secondary">
+               View SQL Queries
+            </a>
+        </div>
+    </div>
+</div>
 
-    h1 {
-      text-align: center;
-      color: #ffffff;
-      margin-bottom: 2rem;
-    }
-
-    pre {
-      background-color: #252526;
-      padding: 1rem;
-      border-radius: 5px;
-      overflow-x: auto;
-      white-space: pre-wrap;
-      line-height: 1.5;
-    }
-
-    .keyword { color: #569cd6; font-weight: bold; }
-    .comment { color: #6a9955; font-style: italic; }
-    .function { color: #dcdcaa; }
-
-    a.back {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.5rem 1rem;
-      background: #555;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-
-    a.back:hover {
-      background: #333;
-    }
-  </style>
-</head>
-<body>
-  <h1>International FMCG Sales Analysis - SQL Queries</h1>
-
-  <pre>
-<span class="comment">-- Q1 Total profit of breweries by territory (2017-2019)</span>
-<span class="keyword">SELECT</span> CASE 
-    <span class="keyword">WHEN</span> COUNTRIES IN ('Nigeria','Ghana','Senegal','Togo','Benin') <span class="keyword">THEN</span> 'Francophone'
-    <span class="keyword">WHEN</span> COUNTRIES IN ('Nigeria','Ghana','Senegal','Togo','Benin') <span class="keyword">THEN</span> 'Anglophone'
-    <span class="keyword">ELSE</span> 'Other'
-<span class="keyword">END</span> AS TERRITORY,
-SUM(PROFIT) AS TOTAL_PROFIT
-<span class="keyword">FROM</span> international_fmcg_sql_assessment
-<span class="keyword">WHERE</span> YEARS BETWEEN 2017 AND 2019
-<span class="keyword">GROUP BY</span> TERRITORY;
-
-<span class="comment">-- Q2 Compare total profit between territories</span>
-<span class="keyword">SELECT</span> CASE 
-    <span class="keyword">WHEN</span> COUNTRIES IN ('Ghana','Nigeria','Togo','Senegal','Benin') <span class="keyword">THEN</span> 'Francophone'
-    <span class="keyword">WHEN</span> COUNTRIES IN ('Ghana','Nigeria','Togo','Senegal','Benin') <span class="keyword">THEN</span> 'Anglophone'
-    <span class="keyword">ELSE</span> 'Other'
-<span class="keyword">END</span> AS Territory,
-SUM(PROFIT) AS Total_Profit
-<span class="keyword">FROM</span> international_fmcg_sql_assessment
-<span class="keyword">GROUP BY</span> CASE 
-    <span class="keyword">WHEN</span> COUNTRIES IN ('Ghana','Nigeria','Togo','Senegal','Benin') <span class="keyword">THEN</span> 'Francophone'
-    <span class="keyword">WHEN</span> COUNTRIES IN ('Ghana','Nigeria','Togo','Senegal','Benin') <span class="keyword">THEN</span> 'Anglophone'
-    <span class="keyword">ELSE</span> 'Other'
-<span class="keyword">END;
-
-<span class="comment">-- Q3 Country with highest profit in 2019</span>
-<span class="keyword">SELECT</span> COUNTRIES, SUM(PROFIT) AS Total_Profit
-<span class="keyword">FROM</span> international_fmcg_sql_assessment
-<span class="keyword">WHERE</span> YEARS = 2019
-<span class="keyword">GROUP BY</span> COUNTRIES
-<span class="keyword">LIMIT</span> 1;
-
-<span class="comment">-- Q4 Year with highest profit</span>
-<span class="keyword">SELECT</span> YEARS, SUM(PROFIT) AS Total_Profit
-<span class="keyword">FROM</span> international_fmcg_sql_assessment
-<span class="keyword">GROUP BY</span> YEARS
-<span class="keyword">ORDER BY</span> Total_Profit DESC;
-
-<span class="comment">-- Q5 Month with least profit in three years</span>
-<span class="keyword">SELECT</span> MONTHS, SUM(PROFIT) AS total_profit
-<span class="keyword">FROM</span> international_fmcg_sql_assessment
-<span class="keyword">GROUP BY</span> MONTHS
-<span class="keyword">ORDER BY</span> total_profit ASC
-<span class="keyword">LIMIT</span> 1;
-
-  </pre>
-
-  <a href="index.html" class="back">Back to Portfolio</a>
-</body>
-</html>
 
 
             <div class="project-card">
