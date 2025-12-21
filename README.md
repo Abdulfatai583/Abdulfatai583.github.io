@@ -128,7 +128,68 @@ This Call Center Performance Dashboard demonstrates how operational data can be 
 The project highlights the value of analytics in enhancing efficiency, accountability, and overall service performance in call center environments.
 
 ### Project Title Three
-*A brief description of your project, the tools used, and the key insights derived.*
+# International FMCG Sales Analysis (SQL)
+
+## Project Overview
+This project analyzes international FMCG (Fast-Moving Consumer Goods) sales data using SQL.  
+It evaluates profit trends, regional performance, and cost efficiency across multiple countries over recent years.  
+The analysis provides actionable insights for sales and marketing strategies.
+
+## Dataset
+The dataset `international_fmcg_sql_assessment` contains:
+
+| Column Name | Description |
+|-------------|-------------|
+| `COUNTRIES` | Country where the sales occurred |
+| `YEARS`     | Year of the sales record |
+| `MONTHS`    | Month of the sales record |
+| `BRANDS`    | Brand name of the product |
+| `PROFIT`    | Profit generated |
+| `QUANTITY`  | Quantity sold |
+| `REGION`    | Region within the country |
+| `SALES_REP` | Sales representative responsible |
+
+
+## Business Questions Addressed
+The project answers 21 key business questions, including:
+
+1. Total profit by territory over the last three years  
+2. Comparison of profits between Francophone and Anglophone countries  
+3. Country with the highest profit in 2019  
+4. Year with the highest profit  
+5. Month with the least profit  
+6. Minimum profit in December 2018  
+7. Monthly profit percentage in 2019  
+8. Highest profit-generating brand in Senegal  
+9. Profit trends over months  
+10. Top brands in Francophone countries (2018–2019)  
+11. Top consumer brands in Ghana  
+12. Beer consumption trends in Nigeria over three years  
+13. Favorite malt brands in Anglophone regions (2018–2019)  
+14. Highest-selling brands in 2019 (Nigeria)  
+15. Favorite brands in South-South Nigeria  
+16. Beer consumption breakdown by brand/year  
+17. Budweiser consumption by region (Nigeria)  
+18. Budweiser consumption in 2019 (promo insights)  
+19. Country with highest overall beer consumption  
+20. Top Budweiser salesperson in Senegal  
+21. Country with highest profit in Q4 2019  
+
+
+## SQL Queries
+All SQL queries are available in the portfolio: [View SQL Queries](international-fmcg.html)  
+
+*Example queries included:*
+```sql
+-- Q1 Total profit by territory (2017–2019)
+SELECT CASE 
+         WHEN COUNTRIES IN ('Nigeria','Ghana','Senegal','Togo','Benin') THEN 'Francophone'
+         ELSE 'Other' 
+       END AS TERRITORY,
+       SUM(PROFIT) AS TOTAL_PROFIT
+FROM international_fmcg_sql_assessment
+WHERE YEARS BETWEEN 2017 AND 2019
+GROUP BY TERRITORY;
 
 
 ## Skills
