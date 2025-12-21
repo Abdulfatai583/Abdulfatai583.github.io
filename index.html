@@ -128,24 +128,75 @@
     </div>
 </div>
 
-<!-- Project 3 -->
-<div class="project-card">
-    <img src="international-fmcg.png" alt="International FMCG SQL Analysis">
-    <div class="project-card-content">
-        <h3>International FMCG Sales Analysis (SQL)</h3>
-        <p>
-            This project analyzes international FMCG sales data using SQL to evaluate
-            profit trends, regional performance, and cost efficiency across multiple countries.
-        </p>
-        <div class="project-buttons">
-            <a href="international-fmcg.html"
-               target="_blank"
-               class="btn btn-secondary">
-               View SQL Queries
-            </a>
-        </div>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International FMCG SQL Queries</title>
+  
+  <!-- Prism.js CSS for syntax highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    pre {
+      padding: 1rem;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background: #555;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    a.back:hover {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>International FMCG Sales Analysis - SQL Queries</h1>
+
+  <!-- Add your SQL inside the <code> block with class="language-sql" -->
+  <pre><code class="language-sql">
+-- Example SQL Queries
+
+-- Total sales by country
+SELECT country, SUM(sales) AS total_sales
+FROM sales_data
+GROUP BY country;
+
+-- Profit trends
+SELECT month, SUM(profit) AS monthly_profit
+FROM sales_data
+GROUP BY month;
+
+-- Cost efficiency
+SELECT product, cost, revenue, (revenue - cost) AS profit
+FROM sales_data;
+  </code></pre>
+
+  <a href="index.html" class="back">Back to Portfolio</a>
+
+  <!-- Prism.js JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-sql.min.js"></script>
+</body>
+</html>
 
 
 
