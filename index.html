@@ -133,27 +133,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>International FMCG SQL Queries</title>
-  
-  <!-- Prism.js CSS for syntax highlighting -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
-
+  <title>International FMCG SQL Queries - Sample</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Courier New", Courier, monospace;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
       margin: 2rem;
-      background: #f9f9f9;
-      color: #333;
     }
+
     h1 {
       text-align: center;
+      color: #ffffff;
       margin-bottom: 2rem;
     }
+
     pre {
+      background-color: #252526;
       padding: 1rem;
       border-radius: 5px;
       overflow-x: auto;
+      white-space: pre-wrap;
+      line-height: 1.5;
     }
+
+    .keyword { color: #569cd6; font-weight: bold; }
+    .comment { color: #6a9955; font-style: italic; }
+    .function { color: #dcdcaa; }
+
     a.back {
       display: inline-block;
       margin-top: 2rem;
@@ -163,6 +170,7 @@
       text-decoration: none;
       border-radius: 4px;
     }
+
     a.back:hover {
       background: #333;
     }
@@ -171,34 +179,57 @@
 <body>
   <h1>International FMCG Sales Analysis - SQL Queries</h1>
 
-  <!-- Add your SQL inside the <code> block with class="language-sql" -->
-  <pre><code class="language-sql">
--- Example SQL Queries
+  <pre>
+<span class="comment">-- Q1 Total profit of breweries by territory (2017-2019)</span>
+<span class="keyword">SELECT</span> CASE 
+    <span class="keyword">WHEN</span> COUNTRIES IN ('Nigeria','Ghana','Senegal','Togo','Benin') <span class="keyword">THEN</span> 'Francophone'
+    <span class="keyword">WHEN</span> COUNTRIES IN ('Nigeria','Ghana','Senegal','Togo','Benin') <span class="keyword">THEN</span> 'Anglophone'
+    <span class="keyword">ELSE</span> 'Other'
+<span class="keyword">END</span> AS TERRITORY,
+SUM(PROFIT) AS TOTAL_PROFIT
+<span class="keyword">FROM</span> international_fmcg_sql_assessment
+<span class="keyword">WHERE</span> YEARS BETWEEN 2017 AND 2019
+<span class="keyword">GROUP BY</span> TERRITORY;
 
--- Total sales by country
-SELECT country, SUM(sales) AS total_sales
-FROM sales_data
-GROUP BY country;
+<span class="comment">-- Q2 Compare total profit between territories</span>
+<span class="keyword">SELECT</span> CASE 
+    <span class="keyword">WHEN</span> COUNTRIES IN ('Ghana','Nigeria','Togo','Senegal','Benin') <span class="keyword">THEN</span> 'Francophone'
+    <span class="keyword">WHEN</span> COUNTRIES IN ('Ghana','Nigeria','Togo','Senegal','Benin') <span class="keyword">THEN</span> 'Anglophone'
+    <span class="keyword">ELSE</span> 'Other'
+<span class="keyword">END</span> AS Territory,
+SUM(PROFIT) AS Total_Profit
+<span class="keyword">FROM</span> international_fmcg_sql_assessment
+<span class="keyword">GROUP BY</span> CASE 
+    <span class="keyword">WHEN</span> COUNTRIES IN ('Ghana','Nigeria','Togo','Senegal','Benin') <span class="keyword">THEN</span> 'Francophone'
+    <span class="keyword">WHEN</span> COUNTRIES IN ('Ghana','Nigeria','Togo','Senegal','Benin') <span class="keyword">THEN</span> 'Anglophone'
+    <span class="keyword">ELSE</span> 'Other'
+<span class="keyword">END;
 
--- Profit trends
-SELECT month, SUM(profit) AS monthly_profit
-FROM sales_data
-GROUP BY month;
+<span class="comment">-- Q3 Country with highest profit in 2019</span>
+<span class="keyword">SELECT</span> COUNTRIES, SUM(PROFIT) AS Total_Profit
+<span class="keyword">FROM</span> international_fmcg_sql_assessment
+<span class="keyword">WHERE</span> YEARS = 2019
+<span class="keyword">GROUP BY</span> COUNTRIES
+<span class="keyword">LIMIT</span> 1;
 
--- Cost efficiency
-SELECT product, cost, revenue, (revenue - cost) AS profit
-FROM sales_data;
-  </code></pre>
+<span class="comment">-- Q4 Year with highest profit</span>
+<span class="keyword">SELECT</span> YEARS, SUM(PROFIT) AS Total_Profit
+<span class="keyword">FROM</span> international_fmcg_sql_assessment
+<span class="keyword">GROUP BY</span> YEARS
+<span class="keyword">ORDER BY</span> Total_Profit DESC;
+
+<span class="comment">-- Q5 Month with least profit in three years</span>
+<span class="keyword">SELECT</span> MONTHS, SUM(PROFIT) AS total_profit
+<span class="keyword">FROM</span> international_fmcg_sql_assessment
+<span class="keyword">GROUP BY</span> MONTHS
+<span class="keyword">ORDER BY</span> total_profit ASC
+<span class="keyword">LIMIT</span> 1;
+
+  </pre>
 
   <a href="index.html" class="back">Back to Portfolio</a>
-
-  <!-- Prism.js JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-sql.min.js"></script>
 </body>
 </html>
-
-
 
 
             <div class="project-card">
