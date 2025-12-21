@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Center Dashboard Documentation</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 2rem; background-color: #f0f4f8; color: #333; line-height: 1.6; }
+    h1 { color: #0a3d62; }
+    h2 { color: #1e3799; margin-top: 2rem; }
+    h3 { color: #3c40c6; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; }
+    ul, ol { margin-left: 1.5rem; }
+    a { color: #1e90ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a.back { display: inline-block; margin-top: 2rem; padding: 0.5rem 1rem; background-color: #0a3d62; color: #fff; text-decoration: none; border-radius: 4px; transition: 0.3s; }
+    a.back:hover { background-color: #1e3799; }
+    .highlight { background-color: #ffeaa7; padding: 0.2rem 0.4rem; border-radius: 3px; }
+    .btn-link { display: inline-block; margin: 0.5rem 0; padding: 0.3rem 0.6rem; background-color: #3c40c6; color: #fff; text-decoration: none; border-radius: 3px; }
+    .btn-link:hover { background-color: #1e3799; }
+  </style>
+</head>
+<body>
+
+  <h1>Call Center Performance Dashboard</h1>
+
+  <h2>Table of Contents</h2>
+  <ul>
+    <li><a href="#overview">Project Overview</a></li>
+    <li><a href="#dataset">Dataset Summary</a></li>
+    <li><a href="#preparation">Data Preparation</a></li>
+    <li><a href="#insights">Key Insights & Analysis</a></li>
+    <li><a href="#recommendations">Recommendations</a></li>
+    <li><a href="#tools">Tools & Technologies</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#file">Power BI File</a></li>
+  </ul>
+
+  <h2 id="overview">Project Overview</h2>
+  <p>This project analyzes call center operational data to evaluate agent performance, call handling efficiency, and overall service quality. The objective is to identify performance gaps, workload patterns, and customer service trends that help management improve operational efficiency and customer satisfaction.</p>
+  <p>Power BI Desktop was used for data cleaning, modeling, and interactive dashboard development to transform raw call center data into actionable insights.</p>
+
+  <h2 id="dataset">Dataset Summary</h2>
+  <ul>
+    <li>Call volume and call duration</li>
+    <li>Agent performance metrics</li>
+    <li>Call resolution status</li>
+    <li>Customer satisfaction indicators</li>
+    <li>Time-based attributes (date, time, shifts)</li>
+  </ul>
+
+  <h2 id="preparation">Data Preparation</h2>
+  <ul>
+    <li>Cleaning and formatting raw call records</li>
+    <li>Handling missing and inconsistent values</li>
+    <li>Creating calculated fields for performance metrics</li>
+    <li>Structuring the data model for efficient analysis in Power BI</li>
+  </ul>
+  <p>DAX measures were used to compute KPIs such as call volume trends, resolution rates, and agent performance indicators.</p>
+
+  <h2 id="insights">Key Insights & Analysis</h2>
+  <h3>Operational Insights</h3>
+  <ul>
+    <li>Call volumes varied significantly by time and shift, indicating peak operational periods.</li>
+    <li>Certain agents handled a higher share of calls, highlighting workload imbalance.</li>
+    <li>Average call duration provided insight into call complexity and agent efficiency.</li>
+  </ul>
+
+  <h3>Agent Performance Insights</h3>
+  <ul>
+    <li>High-performing agents consistently resolved calls faster while maintaining service quality.</li>
+    <li>Performance differences across agents highlighted opportunities for targeted training and support.</li>
+  </ul>
+
+  <h3>Service Quality Insights</h3>
+  <ul>
+    <li>Call resolution efficiency showed a direct relationship with customer satisfaction.</li>
+    <li>Periods of high call volume correlated with longer handling times, impacting service quality.</li>
+  </ul>
+
+  <h2 id="recommendations">Recommendations</h2>
+  <ol>
+    <li>Optimize staff scheduling during peak call periods to reduce workload pressure.</li>
+    <li>Provide targeted training for agents with lower resolution efficiency.</li>
+    <li>Monitor key KPIs regularly using dashboards to track performance trends.</li>
+    <li>Implement workload balancing strategies to improve agent productivity and service quality.</li>
+  </ol>
+
+  <h2 id="tools">Tools & Technologies</h2>
+  <ul>
+    <li><strong>Power BI Desktop:</strong> Data modeling, DAX calculations, and dashboard creation</li>
+    <li><strong>Power Query:</strong> Data cleaning and transformation</li>
+    <li><strong>Excel / CSV:</strong> Source data inspection</li>
+  </ul>
+
+  <h2 id="conclusion">Conclusion</h2>
+  <p>This Call Center Performance Dashboard demonstrates how operational data can be transformed into meaningful insights using Power BI. By visualizing call trends, agent performance, and service quality metrics, the dashboard provides a data-driven foundation for improving customer support operations and decision-making.</p>
+  <p>The project highlights the value of analytics in enhancing efficiency, accountability, and overall service performance in call center environments.</p>
+
+  <h2 id="file">Power BI File</h2>
+  <p>You can download the Power BI dashboard <a href="call-center-dashboard.pbix" download class="btn-link">here</a>.</p>
+
+  <a href="index.html" class="back">Back to Portfolio</a>
+
+</body>
+</html>
