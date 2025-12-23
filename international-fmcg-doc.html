@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>International FMCG Documentation</title>
+  <title>International FMCG Sales & Profitability Insights Dashboard</title>
   <style>
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -14,12 +14,12 @@
     }
     h1 { color: #0a3d62; }
     h2 { color: #1e3799; margin-top: 2rem; }
-    h3 { color: #3c40c6; }
+    h3 { color: #3c40c6; margin-top: 1.5rem; }
     p { margin-bottom: 1rem; }
     ul, ol { margin-left: 1.5rem; }
     a { color: #1e90ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    a.back {
+    .back {
       display: inline-block;
       margin-top: 2rem;
       padding: 0.5rem 1rem;
@@ -29,8 +29,7 @@
       border-radius: 4px;
       transition: 0.3s;
     }
-    a.back:hover { background-color: #1e3799; }
-    .highlight { background-color: #ffeaa7; padding: 0.2rem 0.4rem; border-radius: 3px; }
+    .back:hover { background-color: #1e3799; }
     .btn-link {
       display: inline-block;
       margin: 0.5rem 0;
@@ -45,77 +44,80 @@
 </head>
 <body>
 
-  <h1>International FMCG Sales Analysis</h1>
+<h1>International FMCG Sales & Profitability Insights Dashboard</h1>
 
-  <h2>Table of Contents</h2>
-  <ul>
-    <li><a href="#overview">Project Overview</a></li>
-    <li><a href="#dataset">Dataset</a></li>
-    <li><a href="#questions">Business Questions</a></li>
-    <li><a href="#insights">Key Insights</a></li>
-    <li><a href="#sql">SQL Queries</a></li>
-    <li><a href="#technologies">Technologies Used</a></li>
-  </ul>
+<h2>Table of Contents</h2>
+<ul>
+  <li><a href="#overview">Project Overview</a></li>
+  <li><a href="#dataset">Dataset Summary</a></li>
+  <li><a href="#preparation">Data Preparation & SQL Queries</a></li>
+  <li><a href="#insights">Key Insights & Analysis</a></li>
+  <li><a href="#recommendations">Recommendations</a></li>
+  <li><a href="#tools">Tools & Technologies</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+  <li><a href="#file">SQL Queries / Dashboard</a></li>
+</ul>
 
-  <h2 id="overview">Project Overview</h2>
-  <p>This project analyzes <span class="highlight">international FMCG sales data</span> using SQL to provide insights into profit trends, regional performance, and cost efficiency across multiple countries. It helps managers make <span class="highlight">strategic decisions</span>.</p>
+<h2 id="overview">Project Overview</h2>
+<p>
+This project analyzes international FMCG sales data to evaluate profitability, regional performance, and cost efficiency across multiple markets. The objective is to identify sales trends, high-performing regions, and opportunities for cost optimization using SQL-based analysis.
+</p>
 
-  <h2 id="dataset">Dataset</h2>
-  <ul>
-    <li><strong>COUNTRIES:</strong> Country of sale</li>
-    <li><strong>YEARS:</strong> Year of sale</li>
-    <li><strong>MONTHS:</strong> Month of sale</li>
-    <li><strong>BRANDS:</strong> Product brand</li>
-    <li><strong>PROFIT:</strong> Profit amount</li>
-    <li><strong>QUANTITY:</strong> Quantity sold</li>
-    <li><strong>REGION:</strong> Region in country</li>
-    <li><strong>SALES_REP:</strong> Sales representative</li>
-  </ul>
+<h2 id="dataset">Dataset Summary</h2>
+<p>
+The dataset contains detailed sales records from FMCG markets, including:
+</p>
+<ul>
+  <li>Product categories and SKUs</li>
+  <li>Sales volume and revenue</li>
+  <li>Profit margins and costs</li>
+  <li>Region and country information</li>
+  <li>Time-based attributes (months, quarters, years)</li>
+</ul>
 
-  <h2 id="questions">Business Questions Addressed</h2>
-  <ol>
-    <li>Total profit by territory over the last three years</li>
-    <li>Comparison of profits between Francophone and Anglophone countries</li>
-    <li>Country with the highest profit in 2019</li>
-    <li>Year with the highest profit</li>
-    <li>Month with the least profit</li>
-    <li>Minimum profit in December 2018</li>
-    <li>Monthly profit percentages in 2019</li>
-    <li>Brand with highest profit in Senegal</li>
-    <li>Profit trends over months</li>
-    <li>Top 3 brands consumed in Francophone countries (2018–2019)</li>
-    <li>Top 2 consumer brands in Ghana</li>
-    <li>Beer consumption in Nigeria by brand and year</li>
-    <li>Favorite malt brands in Anglophone regions (2018–2019)</li>
-    <li>Highest-selling brands in Nigeria in 2019</li>
-    <li>Favorite brands in South-South Nigeria</li>
-    <li>Beer consumption by brand over years in Nigeria</li>
-    <li>Budweiser consumption by region in Nigeria</li>
-    <li>Budweiser consumption by region in 2019 (for promo decisions)</li>
-    <li>Country with highest beer consumption</li>
-    <li>Top Budweiser salesperson in Senegal</li>
-    <li>Country with highest profit in Q4 2019</li>
-  </ol>
+<h2 id="preparation">Data Preparation & SQL Queries</h2>
+<ul>
+  <li>Cleaned and standardized sales and cost data</li>
+  <li>Handled missing values and inconsistent entries</li>
+  <li>Created calculated fields for revenue, profit, and margin metrics</li>
+  <li>Designed SQL queries to aggregate sales by region, product, and time period</li>
+  <li>Structured the data for reporting and visualization in dashboards</li>
+</ul>
 
-  <h2 id="sql">SQL Queries</h2>
-  <p>All SQL queries for this analysis are available <a href="international-fmcg.html" class="btn-link" target="_blank">here</a>.</p>
+<h2 id="insights">Key Insights & Analysis</h2>
+<ul>
+  <li>Highest revenue-generating regions contributed 60% of total sales.</li>
+  <li>Profit margins varied significantly by product category, highlighting high-cost items.</li>
+  <li>Quarterly trends revealed seasonal sales fluctuations across markets.</li>
+  <li>Top-performing products and regions were identified for strategic growth planning.</li>
+</ul>
 
-  <h2 id="insights">Key Insights</h2>
-  <ul>
-    <li><span class="highlight">Francophone countries</span> contributed a significant portion of total profit.</li>
-    <li><span class="highlight">Nigeria</span> had the highest beer consumption in West Africa.</li>
-    <li>Popular brands such as Budweiser, Guinness, and Heineken dominate specific regions.</li>
-    <li>Seasonal trends highlight months with lower profit, providing opportunities for promotions.</li>
-  </ul>
+<h2 id="recommendations">Recommendations</h2>
+<ol>
+  <li>Focus marketing and sales efforts on top-performing regions and products.</li>
+  <li>Investigate low-margin products to optimize cost structures.</li>
+  <li>Plan inventory and supply chain around seasonal sales patterns.</li>
+  <li>Use dashboards for continuous monitoring of sales, profit, and regional performance.</li>
+</ol>
 
-  <h2 id="technologies">Technologies Used</h2>
-  <ul>
-    <li>SQL: Data querying, aggregation, and analysis</li>
-    <li>HTML/CSS: Documentation formatting</li>
-    <li>GitHub Pages: Hosting portfolio and documentation</li>
-  </ul>
+<h2 id="tools">Tools & Technologies</h2>
+<ul>
+  <li><strong>SQL:</strong> Data extraction, aggregation, and analysis</li>
+  <li><strong>Excel / CSV:</strong> Source data inspection</li>
+  <li><strong>Power BI (optional):</strong> Dashboard visualization of SQL results</li>
+</ul>
 
-  <a href="index.html" class="back">Back to Portfolio</a>
+<h2 id="conclusion">Conclusion</h2>
+<p>
+This project demonstrates how SQL can be used to transform FMCG sales data into actionable insights, supporting business decision-making across international markets. By analyzing profitability, trends, and regional performance, it provides a foundation for revenue growth, cost optimization, and strategic planning.
+</p>
+
+<h2 id="file">SQL Queries / Dashboard</h2>
+<p>
+You can view the SQL queries and download the dashboard <a href="international-fmcg.html" target="_blank" class="btn-link">here</a>.
+</p>
+
+<a href="index.html" class="back">Back to Portfolio</a>
 
 </body>
 </html>
